@@ -32,10 +32,15 @@ def getabndetails(abninstance):
 
 	#makine string into soup and speicify its xml
 	soup1ABN = BeautifulSoup(abnsearch, 'xml')
-	print type(soup1ABN)
+	
+	#print type of souop
+	print "soup type",type(soup1ABN)
+	#testing geting one piece of info from returend company info, added limit 1 to avoid trading name
+	companyname = soup1ABN.find_all('organisationName', limit=1)
+	#Making sure its in a tring
+	print 'company name type', type(companyname)
+	print "Company name:",companyname
 
-	#for each abn in xm document print abn
-	#for abn in soup.find_all('abn'):
-	#	print(abn.text)
+
 #testing function with one ABN
 getabndetails(74172177893)
