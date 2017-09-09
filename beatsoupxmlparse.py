@@ -35,12 +35,15 @@ def getabndetails(abninstance):
 	
 	#print type of souop
 	print "soup type",type(soup1ABN)
-	#testing geting one piece of info from returend company info, added limit 1 to avoid trading name
+	#testing geting one piece of info from returend company info (company name), added limit 1 to avoid  getting trading name with 'organisation name'
 	companyname = soup1ABN.find_all('organisationName', limit=1)
-	#Making sure its in a tring
+	#getting type that company name is
 	print 'company name type', type(companyname)
-	print "Company name:",companyname
+	#company name, working tage not removed .
+	print "Company name - tage not removed:",companyname
 
 
 #testing function with one ABN
 getabndetails(74172177893)
+
+#
