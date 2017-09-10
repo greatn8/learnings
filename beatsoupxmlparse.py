@@ -42,6 +42,26 @@ def getabndetails(abninstance):
 	#company name, working tage not removed .
 	print "Company name - tage not removed:",companyname
 
+	#get main registratin date
+	mainfrom = soup1ABN.find_all('effectiveFrom', limit=1)
+	#getting type that mainpfrom is
+	print 'mainfrom type', type(mainfrom)
+	#mainfrom, working tage not removed .
+	print "abn active from- tage not removed:",mainfrom
+
+	#get main business atet from one abn soup
+	mainstate = soup1ABN.find_all('stateCode', limit=1)
+	#getting type that state is
+	print 'state type', type(mainstate)
+	#main state, working tage not removed .
+	print "state - tage not removed:",mainstate
+
+	#get postcode for one abn soup
+	mainpost = soup1ABN.find_all('postcode', limit=1)
+	#getting type that mainpost is
+	print 'company name type', type(mainpost)
+	#mainpost, working tage not removed .
+	print "abn active from- tage not removed:",mainpost
 
 #testing function with one ABN
 getabndetails(74172177893)
